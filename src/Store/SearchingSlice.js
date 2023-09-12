@@ -15,10 +15,14 @@ const searchSlice=createSlice({
     name:"search",
     initialState:{
         books:[],
+    details:[],
         status:null,
         error:null
     },
       reducers:{
+        getDetails(state,action){
+// console.log(action.payload)
+        }
 
       },
       extraReducers:{
@@ -33,5 +37,5 @@ const searchSlice=createSlice({
     //    [fetchBooks.rejected]:(state.action)=>{},
       }
 })
- export const {getBook}=searchSlice.actions;
+ export const {getDetails}=searchSlice.actions;
  export const  searchReducer=searchSlice.reducer

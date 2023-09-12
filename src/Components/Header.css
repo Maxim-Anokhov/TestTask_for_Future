@@ -2,7 +2,7 @@
     min-width: fit-content;
     max-width: 1920px;
     /* height: ; */
-    background-color: rgb(173, 248, 205);
+    background-color: rgb(160, 156, 146);
     grid-column: 1/6;
     grid-row: 1/2;
     display: grid;

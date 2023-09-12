@@ -1,18 +1,19 @@
-import { Header } from './Components/Header';
-import { ResultPage } from './Components/ResultPage';
-
+import React from 'react';
+import { MainPage } from './Components/MainPage';
+import { BookDetails } from './Components/BookDetails';
 import './App.css';
-import { useSelector} from 'react-redux';
+
+import { Routes, Route } from "react-router-dom"
 
 function App() {
-const quantityBooks=useSelector(state=>state.search.books.totalItems)
 
   return (
     <div className="App">
-     <Header/>
-     <h4 className='quantity_books'>Found {quantityBooks} results</h4>
-     <ResultPage/>
-     <button className='load_more'>load more</button>
+      <Routes>
+        <Route path="/MainPage" element={<MainPage />} />
+        <Route path='/BookDetails' element={<BookDetails />} />
+        <Route path='*' element={<MainPage/>}/>
+      </Routes>
     </div>
   );
 }
