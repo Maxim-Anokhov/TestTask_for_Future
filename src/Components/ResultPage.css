@@ -1,14 +1,17 @@
 .ResultPage{
     margin-top: 20px;
     background-color: rgb(187, 134, 19);
-    /* height:auto;
-    width:auto; */
+   min-height: 100px; max-height: 250px;
+    min-width: 0px;
+    max-width: 350px;
+    display: grid;
+    /* grid-template-rows: 2fr 0.5fr 0.5fr 0.5fr; */
    
     
     
 }
 .book_cover{
-    height:200px;
-    width: 140px;
-    border-radius: 10px;
+    height:170px;
+    width: 120px;
+    /* border-radius: 10px; */
 }

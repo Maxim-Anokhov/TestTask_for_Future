@@ -28,13 +28,15 @@ export function SearchingForm(){
       
            
 
-            <form  className="SearchingForm" onSubmit={e=>getBooks(e)} action="preventDefault">
+            <form  className="SearchingForm" onSubmit={e=>getBooks(e)} >
+<div className="input_wrap">
 
             <input className="input_search" type="text"  onChange={setValue} />
             
             <button><img  className="glass"src={require("./glass.png")} alt="img" /></button>
-
-Categories:<select name="Categories" id="">
+</div>
+<div className="select_categories">
+Categories:<select  name="Categories" id="">
 <option value="all">all</option>
 <option value="art">art</option>
 <option value="biography">biography</option>
@@ -43,10 +45,14 @@ Categories:<select name="Categories" id="">
 <option value="medical">medical</option>
 <option value="poetry">poetry</option>
 </select>
-Sorting by: <select name="Sorting by" id="">
+</div>
+<div className="select_relevance">
+Sorting by: <select  name="Sorting by" id="">
     <option value="relevance">relevance</option>
     <option value="newest">newest</option>
 </select>
+</div>
+
            </form>
         
 

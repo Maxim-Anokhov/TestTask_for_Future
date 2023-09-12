@@ -6,7 +6,7 @@ export const fetchBooks=createAsyncThunk(
     const url=`https://www.googleapis.com/books/v1/volumes?q=${bookName}&key=AIzaSyBecL_RLC1qmlcRq9nRA59CvmBNkkpHX6I`
 
         const foundBooks= await fetch(url).then(data=> data.json())
-        
+    
         return foundBooks
     }
 )
@@ -29,7 +29,6 @@ const searchSlice=createSlice({
        [fetchBooks.fulfilled]:(state,action)=>{
         state.status="resolved";
         state.books=action.payload
-    
        },
     //    [fetchBooks.rejected]:(state.action)=>{},
       }

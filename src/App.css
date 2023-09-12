@@ -5,8 +5,23 @@
 .App{
   display: grid;
 grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-grid-template-rows: 0.74fr 1fr ;
+grid-template-rows: 1.2fr 1fr 4.5fr 4.5fr 1fr ;
 justify-content : center;
 background-color: rgb(187, 134, 19);
+height: 1200px;
 
+
+}
+.quantity_books{
+  margin: 0 auto;
+  justify-items: center;
+  grid-column: 1/6;
+  grid-row: 2/3;
+}
+.load_more{
+  width: 100px;
+  height: 20px;
+  grid-column: 1/6;
+  grid-row: 5;
+  margin:0 auto;
 }
