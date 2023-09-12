@@ -1,0 +1,14 @@
+.ResultPage{
+    margin-top: 20px;
+    background-color: rgb(187, 134, 19);
+    /* height:auto;
+    width:auto; */
+   
+    
+    
+}
+.book_cover{
+    height:200px;
+    width: 140px;
+    border-radius: 10px;
+}

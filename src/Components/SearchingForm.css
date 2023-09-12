@@ -1,0 +1,14 @@
+.SearchingForm{
+  display: grid;
+  justify-items: center;
+grid-auto-flow: column;
+justify-content: center;
+}
+.input_search{
+    height: 25px;
+}
+.glass{
+    
+    width: 20px;
+    height: 20px;
+}
