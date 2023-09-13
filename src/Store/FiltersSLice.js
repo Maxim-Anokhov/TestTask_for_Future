@@ -1,25 +1,30 @@
-import {createSlice} from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
-const filtersSlice=createSlice({
+const filtersSlice = createSlice({
 
-    name:"filters",
-    initialState:{
-        categories:"all",
-        sortingBy:"relevance"
+    name: "filters",
+    initialState: {
+        bookName: '',
+        categories: "all",
+        sortingBy: "relevance"
     },
 
-    reducers:{
-        sortFromCategory(state,action){
-
+    reducers: {
+        getBookName(state, action) {
+            state.bookName = action.payload
+            
         },
-        sortFromRelevance(state,action){
-
+        sortFromCategory(state, action) {
+            state.categories = action.payload
+        },
+        sortFromRelevance(state, action) {
+            state.sortingBy = action.payload
         }
     }
 
-    
+
 
 })
 
-export const{sortFromCategory,ortFromRelevance}=filtersSlice.actions;
-export const filtersReducer=filtersSlice.reducer;
+export const { sortFromCategory, sortFromRelevance,getBookName } = filtersSlice.actions;
+export const filtersReducer = filtersSlice.reducer;
