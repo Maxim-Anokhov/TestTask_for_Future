@@ -4,17 +4,29 @@ export const fetchBooks = createAsyncThunk(
     "search/fetchBooks",
     async function ({bookName,categoriesState,sortingState}) {
         
+      
+       
+       
         const url = `https://www.googleapis.com/books/v1/volumes?q=${bookName}&orderBy=${sortingState}&key=AIzaSyBecL_RLC1qmlcRq9nRA59CvmBNkkpHX6I`
 
         const foundBooks = await fetch(url).then(data => data.json())
-       let books
-        if(categoriesState!=='all') {
-            books=foundBooks.items.filter((items)=>items.volumeInfo.categories.find(i=>i!==categoriesState));
-console.log(books)
-            return books
+        const quantityBooks=foundBooks.totalItems
+      
+        let books
+        if(categoriesState!=='All') {
+           
+            const notSortedBooks=foundBooks.items.filter(item=>item.volumeInfo.categories)
+           
+            books=notSortedBooks.filter(i=>i.volumeInfo.categories.find(i=>i===categoriesState))
+         
+            return {books, quantityBooks}
 
-        }else{return books=foundBooks}
-        // return books
+        }else {
+           
+            books=foundBooks.items
+            
+            return {books, quantityBooks}
+        }
     }
 )
 
@@ -23,6 +35,7 @@ const searchSlice = createSlice({
     initialState: {
         books: [],
         details: [],
+        quantityBooks:'',
         status: null,
         error: null
     },
@@ -39,7 +52,8 @@ const searchSlice = createSlice({
         },
         [fetchBooks.fulfilled]: (state, action) => {
             state.status = "resolved";
-            state.books = action.payload
+            state.books = action.payload.books;
+            state.quantityBooks=action.payload.quantityBooks
         },
         //    [fetchBooks.rejected]:(state.action)=>{},
     }

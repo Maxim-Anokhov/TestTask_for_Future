@@ -9,7 +9,7 @@ import { getDetails } from "../Store/SearchingSlice";
 
 export function ResultPage() {
 
-    const books = useSelector(state => state.search.books.items)
+    const books = useSelector(state => state.search.books)
 
     const dispatch = useDispatch()
 

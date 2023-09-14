@@ -5,7 +5,7 @@ const filtersSlice = createSlice({
     name: "filters",
     initialState: {
         bookName: '',
-        categories: "all",
+        categories: "All",
         sortingBy: "relevance"
     },
 

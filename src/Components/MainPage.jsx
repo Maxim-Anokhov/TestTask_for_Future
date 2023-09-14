@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 
 export function MainPage() {
 
-    const quantityBooks = useSelector(state => state.search.books.totalItems)
+    const quantityBooks = useSelector(state => state.search.quantityBooks)
 
 
     return (

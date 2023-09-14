@@ -41,13 +41,13 @@ export function SearchingForm() {
             </div>
             <div className="select_categories">
                 Categories:<select value={categoriesState} onChange={(e) => setCategories(e)} name="Categories" id="">
-                    <option value="all">all</option>
-                    <option value="art">art</option>
-                    <option value="biography">biography</option>
-                    <option value="computers">computers</option>
-                    <option value="history">history</option>
-                    <option value="medical">medical</option>
-                    <option value="poetry">poetry</option>
+                    <option value="All">all</option>
+                    <option value="Art">art</option>
+                    <option value="Biography">biography</option>
+                    <option value="Computers">computers</option>
+                    <option value="History">history</option>
+                    <option value="Medical">medical</option>
+                    <option value="Poetry">poetry</option>
                 </select>
             </div>
             <div className="select_relevance">
